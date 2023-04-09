@@ -3,10 +3,10 @@ package leetcode;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] nums = {2,7,11,2};
-		TwoSum ts = new TwoSum();
-		int[] a = ts.twoSum(nums, 4);
-		System.out.println(a[0] + "：" + a[1]);
+		String[] strs = {"eat","tea","tan","ate","nat","bat"};
+		
+		GroupAnagramas ga = new GroupAnagramas();
+		System.out.println(ga.groupAnagrams3(strs)); 
 	}
 
 }
