@@ -4,9 +4,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		String[] strs = {"eat","tea","tan","ate","nat","bat"};
+		int[] nums = {1,2};
+		int k = 2;
 		
-		GroupAnagramas ga = new GroupAnagramas();
-		System.out.println(ga.groupAnagrams3(strs)); 
+		TopKFrequentElements tke = new TopKFrequentElements();
+		System.out.println(tke.topKFrequent(nums, k)); 
 	}
 
 }
