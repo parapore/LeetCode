@@ -21,7 +21,7 @@ public class BunpaiHousoku {
 		
 		
 		for(int i = 0; i < n; i++) {
-			// arr[i]*(arr[0] + arr[1] arr[2]...arr[n-1]の分配法則
+			// arr[i]*(arr[0] + arr[1] arr[2]...arr[n-1])の分配法則
 			answer += arr[i] * (allAdd);
 		}
 		System.out.println(answer);
