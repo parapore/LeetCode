@@ -42,7 +42,6 @@ public class NotSoDiverse {
 //			while(change > 0) {
 //				change -= list.get(index);
 //				count += list.get(index);
-//				list.set(index, 0);
 //				index++;
 //			}
 			
