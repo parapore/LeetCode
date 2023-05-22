@@ -12,6 +12,8 @@ public class DepthFirstSearch {
 			// 訪れた頂点を探索済みとする
 			seen.set(vertexNumber, true);
 			
+			System.out.print(vertexNumber+ " ");//0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+			
 			// 深さ優先で探索する
 			for (int i = 0; i < graph.get(vertexNumber).size(); i++) {//辺の数分繰り返す
 				//行き先
@@ -54,8 +56,6 @@ public class DepthFirstSearch {
 			DepthFirstSearch d = new DepthFirstSearch();
 			d.dfs(graph, seen, 0);
 
-
-			System.out.println(graph);//[[5], [3, 6], [5, 7], [0, 7], [1, 2, 6], [], [7], [0]]
 			System.out.println(seen);//[true, true, true, true, true, true, true, true]
 		}
 
