@@ -8,8 +8,8 @@ public class BinarySearch1 {
 	private static int[] a;
 
 	private static int binarySearch() {
-		int left = 1;
-		int right = n;
+		int left = 0;
+		int right = n - 1;
 
 		while (left <= right) {//探索範囲がなくなるまで
 			int middle = (left + right) / 2;//配列の真ん中
