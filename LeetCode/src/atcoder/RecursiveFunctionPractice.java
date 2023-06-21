@@ -54,7 +54,7 @@ public class RecursiveFunctionPractice {
 	}
 
 	// 重複なし全探索。組合せ全探索。0～2の数字を含む、N桁の数列を作る
-	private static void recursion3(int N) {
+	private static void recursion3(int N, int index) {
 		//ベース条件（終了条件）
 		// Nが２なら２重for。Nが３なら３重for文になる。
 		if (list.size() == N) {
@@ -66,77 +66,77 @@ public class RecursiveFunctionPractice {
 		}
 
 		//順列全探索との違い
-		// Listが空でないなら前の数字＋１をnumに代入
+		// Listが空でないなら前回index＋１をnumに代入
 		int num = 0;
 		if (list.size() > 0) {
-			num = list.get(list.size() - 1) + 1;
+			num = index + 1;
 		}
 		for (int i = num; i < 5; i++) {
 			list.add(i);
-			recursion3(N);
+			recursion3(N, i);
 			list.remove(list.size() - 1);// 末尾を削除。ここがポイント
 		}
 
 	}
 
 	public static void main(String[] args) {
-		recursion1(3);
+//		recursion1(3);
+//
+//		System.out.println();
+//
+//		recursion2(3);
+//
+//		System.out.println();
 
-		System.out.println();
+		recursion3(3, 0);
 
-		recursion2(3);
-
-		System.out.println();
-
-		recursion3(3);
-
-		//重複あり全探索。3*3*3＝27通り
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				for (int k = 0; k < 3; k++) {
-					System.out.println(i + " " + j + " " + k);
-				}
-			}
-		}
-
-		System.out.println();
-
-		//重複なし全探索。順列。3P3 = 3! = 6通り
-		boolean[] used = new boolean[3];
-		for (int i = 0; i < 3; i++) {
-			if (used[i]) {
-				continue;
-			}
-			used[i] = true;
-			for (int j = 0; j < 3; j++) {
-				if (used[j]) {
-					continue;
-				}
-				used[j] = true;
-				for (int k = 0; k < 3; k++) {
-					if (used[k]) {
-						continue;
-					}
-					used[k] = true;
-					System.out.println(i + " " + j + " " + k);
-					used[k] = false;
-				}
-				used[j] = false;
-			}
-			used[i] = false;
-		}
-
-		System.out.println();
-
-		//重複なし全探索。組合せ。3C3 = 3*2*1 / 3*2*1 = 1通り
-		for (int i = 0; i < 3; i++) {
-			for (int j = i + 1; j < 3; j++) {
-				for (int k = j + 1; k < 3; k++) {
-					System.out.println(i + " " + j + " " + k);
-				}
-			}
-		}
-
+//		//重複あり全探索。3*3*3＝27通り
+//		for (int i = 0; i < 3; i++) {
+//			for (int j = 0; j < 3; j++) {
+//				for (int k = 0; k < 3; k++) {
+//					System.out.println(i + " " + j + " " + k);
+//				}
+//			}
+//		}
+//
+//		System.out.println();
+//
+//		//重複なし全探索。順列。3P3 = 3! = 6通り
+//		boolean[] used = new boolean[3];
+//		for (int i = 0; i < 3; i++) {
+//			if (used[i]) {
+//				continue;
+//			}
+//			used[i] = true;
+//			for (int j = 0; j < 3; j++) {
+//				if (used[j]) {
+//					continue;
+//				}
+//				used[j] = true;
+//				for (int k = 0; k < 3; k++) {
+//					if (used[k]) {
+//						continue;
+//					}
+//					used[k] = true;
+//					System.out.println(i + " " + j + " " + k);
+//					used[k] = false;
+//				}
+//				used[j] = false;
+//			}
+//			used[i] = false;
+//		}
+//
+//		System.out.println();
+//
+//		//重複なし全探索。組合せ。3C3 = 3*2*1 / 3*2*1 = 1通り
+//		for (int i = 0; i < 3; i++) {
+//			for (int j = i + 1; j < 3; j++) {
+//				for (int k = j + 1; k < 3; k++) {
+//					System.out.println(i + " " + j + " " + k);
+//				}
+//			}
+//		}
+//
 		System.out.println();
 
 		//重複なし全探索。組合せ2。5C3 = 5*4*3 / 3*2*1 = 10通り
