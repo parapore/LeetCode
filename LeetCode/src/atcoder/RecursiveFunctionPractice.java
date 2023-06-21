@@ -80,63 +80,63 @@ public class RecursiveFunctionPractice {
 	}
 
 	public static void main(String[] args) {
-//		recursion1(3);
-//
-//		System.out.println();
-//
-//		recursion2(3);
-//
-//		System.out.println();
+		recursion1(3);
+
+		System.out.println();
+
+		recursion2(3);
+
+		System.out.println();
 
 		recursion3(3, 0);
 
-//		//重複あり全探索。3*3*3＝27通り
-//		for (int i = 0; i < 3; i++) {
-//			for (int j = 0; j < 3; j++) {
-//				for (int k = 0; k < 3; k++) {
-//					System.out.println(i + " " + j + " " + k);
-//				}
-//			}
-//		}
-//
-//		System.out.println();
-//
-//		//重複なし全探索。順列。3P3 = 3! = 6通り
-//		boolean[] used = new boolean[3];
-//		for (int i = 0; i < 3; i++) {
-//			if (used[i]) {
-//				continue;
-//			}
-//			used[i] = true;
-//			for (int j = 0; j < 3; j++) {
-//				if (used[j]) {
-//					continue;
-//				}
-//				used[j] = true;
-//				for (int k = 0; k < 3; k++) {
-//					if (used[k]) {
-//						continue;
-//					}
-//					used[k] = true;
-//					System.out.println(i + " " + j + " " + k);
-//					used[k] = false;
-//				}
-//				used[j] = false;
-//			}
-//			used[i] = false;
-//		}
-//
-//		System.out.println();
-//
-//		//重複なし全探索。組合せ。3C3 = 3*2*1 / 3*2*1 = 1通り
-//		for (int i = 0; i < 3; i++) {
-//			for (int j = i + 1; j < 3; j++) {
-//				for (int k = j + 1; k < 3; k++) {
-//					System.out.println(i + " " + j + " " + k);
-//				}
-//			}
-//		}
-//
+		//重複あり全探索。3*3*3＝27通り
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				for (int k = 0; k < 3; k++) {
+					System.out.println(i + " " + j + " " + k);
+				}
+			}
+		}
+
+		System.out.println();
+
+		//重複なし全探索。順列。3P3 = 3! = 6通り
+		boolean[] used = new boolean[3];
+		for (int i = 0; i < 3; i++) {
+			if (used[i]) {
+				continue;
+			}
+			used[i] = true;
+			for (int j = 0; j < 3; j++) {
+				if (used[j]) {
+					continue;
+				}
+				used[j] = true;
+				for (int k = 0; k < 3; k++) {
+					if (used[k]) {
+						continue;
+					}
+					used[k] = true;
+					System.out.println(i + " " + j + " " + k);
+					used[k] = false;
+				}
+				used[j] = false;
+			}
+			used[i] = false;
+		}
+
+		System.out.println();
+
+		//重複なし全探索。組合せ。3C3 = 3*2*1 / 3*2*1 = 1通り
+		for (int i = 0; i < 3; i++) {
+			for (int j = i + 1; j < 3; j++) {
+				for (int k = j + 1; k < 3; k++) {
+					System.out.println(i + " " + j + " " + k);
+				}
+			}
+		}
+
 		System.out.println();
 
 		//重複なし全探索。組合せ2。5C3 = 5*4*3 / 3*2*1 = 10通り
